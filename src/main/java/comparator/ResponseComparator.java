@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import org.json.simple.parser.ParseException;
@@ -24,11 +25,11 @@ import io.restassured.specification.RequestSpecification;
 public class ResponseComparator extends Base{
 	
 	// To make the objects available throughout the class methods and sub packages
-	protected static RequestSpecification httpRequest;
+	protected RequestSpecification httpRequest;
 	protected Response response;
-	protected static String bodyAsString;
-	protected static ResponseBody body;
-	protected static String url1, url2, res1, res2;
+	protected String bodyAsString;
+	protected ResponseBody body;
+	protected String url1, url2, res1, res2;
 
 	public ResponseComparator() throws FileNotFoundException, IOException {
 		super();
@@ -37,7 +38,7 @@ public class ResponseComparator extends Base{
 	
 	
 	// Method comparing two responses
-	public void compareResponses(String file1, String file2) throws IOException, ParseException, URISyntaxException {
+	public void compareResponses(String file1, String file2) throws IOException, ParseException, URISyntaxException, NoSuchElementException {
 
 		try {
 			// creates a new file instance
@@ -75,6 +76,10 @@ public class ResponseComparator extends Base{
 		catch (URISyntaxException urise) {
 			urise.printStackTrace();
 			throw new RuntimeException("* * * * * Issue URI syntax");
+		}
+		catch (NoSuchElementException nsee) {
+			nsee.printStackTrace();
+			throw new RuntimeException("* * * * * One of file under comparison has no more lines present");
 		}
 	}
 
