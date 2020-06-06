@@ -6,11 +6,11 @@ Background:
 Given Provided two files with list of APIs
 
 Scenario:
-When If response data is equals
+When If response data is equal
 Then Should respond result as equal
 
 Scenario:
-When If response data is equals
+When If response data not equal
 Then Should respond result as not equal
 
 Scenario:

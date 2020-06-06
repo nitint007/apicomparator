@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import base.Base;
-import comparator.CompareResponses;
+import comparator.ResponseComparator;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -18,7 +18,7 @@ import cucumber.api.java.en.When;
  */
 public class CompareURLs extends Base {
 	
-	CompareResponses compareresponse;
+	ResponseComparator compare;
 	
 	public CompareURLs() throws FileNotFoundException, IOException {
 		super();
@@ -26,15 +26,27 @@ public class CompareURLs extends Base {
 	}
 
 	@Given("^Provided two files with list of APIs$")
-	public void provideTwoFiles() throws Throwable {
-		compareresponse = new CompareResponses();
-		compareresponse.responseComparator(properties.getProperty("file1"), 
-				properties.getProperty("file2"));  
+	public void provideTwoFiles() throws Throwable { 
+		
+		compare = new ResponseComparator();
+		compare.compareResponses(properties.getProperty("file1"), 
+				properties.getProperty("file2")); 
+		
 	}
 
-	@When("^If response data is equals$")
+	@When("^If response data is equal$")
 	public void ifResponseEqual() throws Throwable {
 	  
+	}
+	
+	@When("^If response data not equal$")
+	public void ifResponseNotEqual() throws Throwable {
+	  
+	}
+	
+	@When("^If one not URL$")
+	public void ifNotURL() throws Throwable {
+	    
 	}
 
 	@Then("^Should respond result as equal$")
@@ -44,11 +56,6 @@ public class CompareURLs extends Base {
 
 	@Then("^Should respond result as not equal$")
 	public void respondNotEqual() throws Throwable {
-	    
-	}
-
-	@When("^If one not URL$")
-	public void ifNotURL() throws Throwable {
 	    
 	}
 
