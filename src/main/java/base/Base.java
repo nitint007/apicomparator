@@ -27,7 +27,7 @@ public class Base {
 				properties.load(reader);
 			} catch (FileNotFoundException fnfe) {
 				fnfe.printStackTrace();
-				throw new RuntimeException("File Data.properties not found at given path.");
+				throw new RuntimeException("File Config.properties not found at given path.");
 			} catch (IOException ioe) {
 				ioe.printStackTrace();
 				throw new RuntimeException("Issue on reading file.");
