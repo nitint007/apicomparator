@@ -15,9 +15,9 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {
 		"junit:target/cucumber-reports/Cucumber.xml",
-		"html:target/cucumber-reports"}, 
+		"html:target/cucumber-reports"},
 features = "src/test/resources/features", 
-tags = { "@Compare" }, // available tags @Purchase, @positiveBuy, @negativeBuy
+tags = { "@Compare" }, // available tags @Compare, @CheckValid, @CheckInvalid, @CheckURL
 glue = "stepDefinitions", 
 monochrome = true, 
 strict = false)

@@ -28,3 +28,20 @@ Go to '/apicomparator/target/cucumber-reports' and open 'index.html'
 /apicomparator/bin/parking_lot.bat is created
 
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# Test data files:
+
+Two type of file are provided:
+1. For basic validation of library - 'file1' and 'file2'
+2. To check 1000+ request - 'longfile1' and 'longfile2'
+
+File contains 1000 request are also verified.
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+# Assumption:
+
+If we provide intended files for scenarios - each passes.
+Currently provided files with combination of URLS considering the problem statement to provide a two files only.
+
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-

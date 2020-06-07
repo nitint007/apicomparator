@@ -21,7 +21,7 @@ public class Base {
 		public Base() throws FileNotFoundException, IOException {
 			BufferedReader reader;
 			try {
-				String configFilePath = "./src/test/resources/ConfigData/Config.properties";
+				String configFilePath = "./src/test/resources/configdata/Config.properties";
 				reader = new BufferedReader(new FileReader(configFilePath));
 				properties = new Properties();
 				properties.load(reader);
@@ -33,5 +33,4 @@ public class Base {
 				throw new RuntimeException("Issue on reading file.");
 			}
 		}
-
 }
