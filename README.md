@@ -15,6 +15,11 @@ cd apicomparator
 
 mvn clean test
 
+# If fails to execute from cmd line -
+
+Go to '/apicomparator/src/test/java/runner/TestRunner.java'
+Run as 'JUnit Test'
+
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
 # For reporting:
