@@ -32,6 +32,11 @@ Go to '/apicomparator/target/cucumber-reports' and open 'index.html'
 
 /apicomparator/bin/parking_lot.bat is created
 
+# If fails to execute from cmd line -
+
+Go to '/apicomparator/src/test/java/runner/TestRunner.java'
+Run as 'JUnit Test'
+
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
 # Test data files:
