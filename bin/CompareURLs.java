@@ -24,14 +24,11 @@ public class CompareURLs extends Base {
 	ResponseComparator compare;
 	ValidateFile validatefile;
 	ValidateFile vurl;
-	String file1, file2;
 
 	// Class constructor to initialising same properties as parent constructor
 	public CompareURLs() throws FileNotFoundException, IOException {
 		super();
 		// TODO Auto-generated constructor stub
-		file1 = properties.getProperty("longfile1");
-		file2 = properties.getProperty("longfile2");
 	}
 
 	// ************** @Given - implementation details **************
@@ -42,8 +39,8 @@ public class CompareURLs extends Base {
 	public void validateFiles() throws Throwable {
 
 		vurl = new ValidateFile();
-		Assert.assertTrue("* * * File Provided is NOT valid", vurl.isValidFile(file1));
-		Assert.assertTrue("* * * File Provided is NOT valid", vurl.isValidFile(file2));
+		Assert.assertTrue("* * * File Provided is NOT valid", vurl.isValidFile(properties.getProperty("file1")));
+		Assert.assertTrue("* * * File Provided is NOT valid", vurl.isValidFile(properties.getProperty("file2")));
 	}
 
 	// ************** @When - implementation details **************
@@ -55,7 +52,7 @@ public class CompareURLs extends Base {
 
 		compare = new ResponseComparator();
 		Assert.assertEquals(true,
-				compare.compareResponses(file1, file2));
+				compare.compareResponses(properties.getProperty("file1"), properties.getProperty("file2")));
 	}
 
 	@When("^If response data not equal$")
@@ -63,7 +60,7 @@ public class CompareURLs extends Base {
 
 		compare = new ResponseComparator();
 		Assert.assertNotEquals(false,
-				compare.compareResponses(file1, file2));
+				compare.compareResponses(properties.getProperty("file1"), properties.getProperty("file2")));
 	}
 
 	@When("^If one not URL$")
@@ -71,7 +68,7 @@ public class CompareURLs extends Base {
 
 		compare = new ResponseComparator();
 		Assert.assertNotEquals(false,
-				compare.compareResponses(file1, file2));
+				compare.compareResponses(properties.getProperty("file1"), properties.getProperty("file2")));
 	}
 
 	// ************** @Then - implementation details **************
