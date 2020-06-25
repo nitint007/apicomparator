@@ -14,7 +14,7 @@ git clone https://github.com/nitint007/apicomparator
 
 cd apicomparator
 
-mvn test
+mvn clean test -Dsurefire.suiteJavaFiles=TestRunner.java
 
 # If fails to execute from cmd line -
 
